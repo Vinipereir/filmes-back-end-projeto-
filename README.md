@@ -51,6 +51,52 @@ O **Catálogo de Filmes e Séries** é uma plataforma social onde usuários pode
 
 ## 🚀 Execução
 
+### Passo a Passo para Executar o Projeto
+
+#### 1. Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/filmes-back-end-projeto-.git
+cd filmes-back-end-projeto-
+```
+
+#### 2. Instale as dependências do backend
+```bash
+cd backend
+npm install
+```
+
+#### 3. Configure o banco de dados
+- Edite o arquivo `.env` se necessário.
+- Execute as migrações:
+```bash
+npx prisma migrate dev
+```
+
+#### 4. Inicie o backend
+```bash
+npm run dev
+```
+O backend estará disponível em `http://localhost:4001` (ou porta configurada).
+
+#### 5. Instale as dependências do frontend
+Abra outro terminal:
+```bash
+cd ../frontend
+npm install
+```
+
+#### 6. Inicie o frontend
+```bash
+npm start
+```
+O frontend estará disponível em `http://localhost:3000`.
+
+#### 7. Acesse a aplicação
+Abra o navegador e acesse: [http://localhost:3000](http://localhost:3000)
+
+---
+**Obs:** Certifique-se de que o backend esteja rodando antes de iniciar o frontend.
+
 ## 📁 Estrutura
 ```
 projeto/
