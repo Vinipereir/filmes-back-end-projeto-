@@ -8,3 +8,9 @@ export const createReview = async (data) => {
 export const getReviewsByMovie = async (movieId) => {
   return prisma.review.findMany({ where: { movieId } });
 };
+
+export const deleteReview = async (id) => {
+  return prisma.review.delete({
+    where: { id },
+  });
+};

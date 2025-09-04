@@ -17,3 +17,14 @@ export const getReviewsByMovie = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+export const deleteReview = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const review = await reviewModel.deleteReview(Number(id));
+    if (!review) return res.status(404).json({ error: 'Review não encontrada' });
+    res.json({ message: 'Review removida com sucesso' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
