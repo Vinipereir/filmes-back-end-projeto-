@@ -12,12 +12,22 @@ export const createMovie = async (req, res) => {
 export const getAllMovies = async (req, res) => {
   try {
     const { title } = req.query;
+    let movies;
     if (title) {
-      const movies = await movieModel.getMoviesByTitle(title);
-      return res.json(movies);
+      movies = await movieModel.getMoviesByTitle(title);
+    } else {
+      movies = await movieModel.getAllMovies();
     }
-    const movies = await movieModel.getAllMovies();
-    res.json(movies);
+    // Formatar releaseDate para string ISO
+    const formatted = movies.map(movie => ({
+      ...movie,
+      releaseDate: movie.releaseDate instanceof Date
+        ? movie.releaseDate.toISOString().slice(0, 10)
+        : (typeof movie.releaseDate === 'string' && movie.releaseDate.includes('T'))
+          ? movie.releaseDate.slice(0, 10)
+          : movie.releaseDate
+    }));
+    res.json(formatted);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -26,8 +36,17 @@ export const getAllMovies = async (req, res) => {
 export const getMovieById = async (req, res) => {
   try {
     const movie = await movieModel.getMovieById(Number(req.params.id));
-    if (!movie) return res.status(404).json({ error: 'Filme não encontrado 👀' });
-    res.json(movie);
+    if (!movie) return res.status(404).json({ error: 'Filme não encontrado' });
+    // Formatar releaseDate para string ISO
+    const formatted = {
+      ...movie,
+      releaseDate: movie.releaseDate instanceof Date
+        ? movie.releaseDate.toISOString().slice(0, 10)
+        : (typeof movie.releaseDate === 'string' && movie.releaseDate.includes('T'))
+          ? movie.releaseDate.slice(0, 10)
+          : movie.releaseDate
+    };
+    res.json(formatted);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
