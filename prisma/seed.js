@@ -1,0 +1,122 @@
+
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
+
+async function main() {
+  await prisma.movie.createMany({
+    data: [
+      // Filmes
+      { title: 'O Poderoso Chefão', genre: 'Drama/Crime', releaseDate: new Date('1972-01-01') },
+      { title: 'Forrest Gump', genre: 'Drama/Romance', releaseDate: new Date('1994-01-01') },
+      { title: 'Titanic', genre: 'Drama/Romance', releaseDate: new Date('1997-01-01') },
+      { title: 'Matrix', genre: 'Ficção científica/Ação', releaseDate: new Date('1999-01-01') },
+      { title: 'O Senhor dos Anéis: A Sociedade do Anel', genre: 'Fantasia/Aventura', releaseDate: new Date('2001-01-01') },
+      { title: 'Star Wars: Episódio IV – Uma Nova Esperança', genre: 'Ficção científica/Aventura', releaseDate: new Date('1977-01-01') },
+      { title: 'Clube da Luta', genre: 'Drama/Suspense', releaseDate: new Date('1999-01-01') },
+      { title: 'O Cavaleiro das Trevas', genre: 'Ação/Crime', releaseDate: new Date('2008-01-01') },
+      { title: 'Pulp Fiction: Tempo de Violência', genre: 'Crime/Drama', releaseDate: new Date('1994-01-01') },
+      { title: 'Avatar', genre: 'Ficção científica/Aventura', releaseDate: new Date('2009-01-01') },
+      { title: 'Parasita', genre: 'Drama/Suspense', releaseDate: new Date('2019-01-01') },
+      { title: 'La La Land', genre: 'Musical/Drama', releaseDate: new Date('2016-01-01') },
+      { title: 'Coringa (Joker)', genre: 'Drama/Crime', releaseDate: new Date('2019-01-01') },
+      { title: 'Interstellar', genre: 'Ficção científica/Drama', releaseDate: new Date('2014-01-01') },
+      { title: 'A Origem (Inception)', genre: 'Ficção científica/Ação', releaseDate: new Date('2010-01-01') },
+      { title: 'Pantera Negra', genre: 'Ação/Ficção científica', releaseDate: new Date('2018-01-01') },
+      { title: 'O Grande Gatsby', genre: 'Drama/Romance', releaseDate: new Date('2013-01-01') },
+      { title: 'Gladiador', genre: 'Ação/Drama', releaseDate: new Date('2000-01-01') },
+      { title: 'Vingadores: Ultimato', genre: 'Ação/Ficção científica', releaseDate: new Date('2019-01-01') },
+      { title: 'Barbie', genre: 'Comédia/Fantasia', releaseDate: new Date('2023-01-01') },
+      { title: 'Oppenheimer', genre: 'Drama/Histórico', releaseDate: new Date('2023-01-01') },
+      { title: 'Homem-Aranha: Sem Volta Para Casa', genre: 'Ação/Fantasia', releaseDate: new Date('2021-01-01') },
+      { title: 'Duna', genre: 'Ficção científica/Aventura', releaseDate: new Date('2021-01-01') },
+      { title: 'Tudo em Todo Lugar ao Mesmo Tempo', genre: 'Ficção científica/Comédia', releaseDate: new Date('2022-01-01') },
+      { title: 'O Resgate do Soldado Ryan', genre: 'Guerra/Drama', releaseDate: new Date('1998-01-01') },
+      { title: 'Uma Linda Mulher', genre: 'Romance/Comédia', releaseDate: new Date('1990-01-01') },
+      { title: 'Velozes e Furiosos', genre: 'Ação/Crime', releaseDate: new Date('2001-01-01') },
+      { title: 'Velozes e Furiosos 5: Operação Rio', genre: 'Ação/Crime', releaseDate: new Date('2011-01-01') },
+      { title: 'Velozes e Furiosos 7', genre: 'Ação/Crime', releaseDate: new Date('2015-01-01') },
+      { title: 'Velozes e Furiosos 10 (Fast X)', genre: 'Ação/Crime', releaseDate: new Date('2023-01-01') },
+      { title: 'Harry Potter e a Pedra Filosofal', genre: 'Fantasia/Aventura', releaseDate: new Date('2001-01-01') },
+      { title: 'Harry Potter e as Relíquias da Morte: Parte 2', genre: 'Fantasia/Aventura', releaseDate: new Date('2011-01-01') },
+      { title: 'Animais Fantásticos e Onde Habitam', genre: 'Fantasia/Aventura', releaseDate: new Date('2016-01-01') },
+      { title: 'O Hobbit: Uma Jornada Inesperada', genre: 'Fantasia/Aventura', releaseDate: new Date('2012-01-01') },
+      { title: 'Mulher-Maravilha', genre: 'Ação/Fantasia', releaseDate: new Date('2017-01-01') },
+      { title: 'Batman: O Cavaleiro das Trevas Ressurge', genre: 'Ação/Drama', releaseDate: new Date('2012-01-01') },
+      { title: 'Homem de Ferro', genre: 'Ação/Ficção científica', releaseDate: new Date('2008-01-01') },
+      { title: 'Capitão América: Guerra Civil', genre: 'Ação/Ficção científica', releaseDate: new Date('2016-01-01') },
+      { title: 'Doutor Estranho no Multiverso da Loucura', genre: 'Ação/Fantasia', releaseDate: new Date('2022-01-01') },
+      { title: 'Guardiões da Galáxia', genre: 'Ação/Ficção científica', releaseDate: new Date('2014-01-01') },
+      { title: 'Deadpool', genre: 'Ação/Comédia', releaseDate: new Date('2016-01-01') },
+      { title: 'Logan', genre: 'Ação/Drama', releaseDate: new Date('2017-01-01') },
+      { title: 'Homem-Aranha: De Volta ao Lar', genre: 'Ação/Fantasia', releaseDate: new Date('2017-01-01') },
+      { title: 'Shrek', genre: 'Animação/Comédia', releaseDate: new Date('2001-01-01') },
+      { title: 'Toy Story', genre: 'Animação/Aventura', releaseDate: new Date('1995-01-01') },
+      { title: 'Procurando Nemo', genre: 'Animação/Aventura', releaseDate: new Date('2003-01-01') },
+      { title: 'Os Incríveis', genre: 'Animação/Ação', releaseDate: new Date('2004-01-01') },
+      { title: 'Meu Malvado Favorito', genre: 'Animação/Comédia', releaseDate: new Date('2010-01-01') },
+      { title: 'Frozen', genre: 'Animação/Musical', releaseDate: new Date('2013-01-01') },
+      { title: 'Divertida Mente', genre: 'Animação/Família', releaseDate: new Date('2015-01-01') },
+      { title: 'O Rei Leão (original)', genre: 'Animação/Drama', releaseDate: new Date('1994-01-01') },
+      // Séries
+      { title: 'Breaking Bad', genre: 'Drama/Crime', releaseDate: new Date('2008-01-01') },
+      { title: 'Game of Thrones', genre: 'Fantasia/Drama', releaseDate: new Date('2011-01-01') },
+      { title: 'Stranger Things', genre: 'Ficção científica/Terror', releaseDate: new Date('2016-01-01') },
+      { title: 'The Office (EUA)', genre: 'Comédia', releaseDate: new Date('2005-01-01') },
+      { title: 'Friends', genre: 'Comédia', releaseDate: new Date('1994-01-01') },
+      { title: 'The Crown', genre: 'Drama/Histórico', releaseDate: new Date('2016-01-01') },
+      { title: 'The Mandalorian', genre: 'Ficção científica/Aventura', releaseDate: new Date('2019-01-01') },
+      { title: 'Black Mirror', genre: 'Ficção científica/Drama', releaseDate: new Date('2011-01-01') },
+      { title: 'Succession', genre: 'Drama', releaseDate: new Date('2018-01-01') },
+      { title: 'Dark', genre: 'Ficção científica/Suspense', releaseDate: new Date('2017-01-01') },
+      { title: 'The Last of Us', genre: 'Drama/Ficção científica', releaseDate: new Date('2023-01-01') },
+      { title: 'Euphoria', genre: 'Drama', releaseDate: new Date('2019-01-01') },
+      { title: 'The Witcher', genre: 'Fantasia/Ação', releaseDate: new Date('2019-01-01') },
+      { title: 'Better Call Saul', genre: 'Drama/Crime', releaseDate: new Date('2015-01-01') },
+      { title: 'Vikings', genre: 'Drama/Histórico', releaseDate: new Date('2013-01-01') },
+      { title: 'The Boys', genre: 'Ação/Sátira', releaseDate: new Date('2019-01-01') },
+      { title: 'Wandavision', genre: 'Ação/Fantasia', releaseDate: new Date('2021-01-01') },
+      { title: 'The Bear', genre: 'Drama', releaseDate: new Date('2022-01-01') },
+      { title: 'House of the Dragon', genre: 'Fantasia/Drama', releaseDate: new Date('2022-01-01') },
+      { title: 'Peaky Blinders', genre: 'Drama/Crime', releaseDate: new Date('2013-01-01') },
+      { title: 'Narcos', genre: 'Crime/Drama', releaseDate: new Date('2015-01-01') },
+      { title: 'Bridgerton', genre: 'Romance/Drama', releaseDate: new Date('2020-01-01') },
+      { title: 'How I Met Your Mother', genre: 'Comédia/Romance', releaseDate: new Date('2005-01-01') },
+      { title: 'Ozark', genre: 'Drama/Suspense', releaseDate: new Date('2017-01-01') },
+      { title: 'Sherlock', genre: 'Policial/Drama', releaseDate: new Date('2010-01-01') },
+      { title: 'The Big Bang Theory', genre: 'Comédia', releaseDate: new Date('2007-01-01') },
+      { title: 'Grey\'s Anatomy', genre: 'Drama/Médico', releaseDate: new Date('2005-01-01') },
+      { title: 'The Walking Dead', genre: 'Terror/Drama', releaseDate: new Date('2010-01-01') },
+      { title: 'Lost', genre: 'Ficção científica/Suspense', releaseDate: new Date('2004-01-01') },
+      { title: 'Prison Break', genre: 'Ação/Suspense', releaseDate: new Date('2005-01-01') },
+      { title: 'House M.D.', genre: 'Drama/Médico', releaseDate: new Date('2004-01-01') },
+      { title: 'Supernatural', genre: 'Fantasia/Terror', releaseDate: new Date('2005-01-01') },
+      { title: 'Lucifer', genre: 'Fantasia/Policial', releaseDate: new Date('2016-01-01') },
+      { title: 'Riverdale', genre: 'Drama/Suspense', releaseDate: new Date('2017-01-01') },
+      { title: 'Outer Banks', genre: 'Aventura/Drama', releaseDate: new Date('2020-01-01') },
+      { title: 'Elite', genre: 'Drama/Suspense', releaseDate: new Date('2018-01-01') },
+      { title: 'Sex Education', genre: 'Comédia/Drama', releaseDate: new Date('2019-01-01') },
+      { title: 'Emily in Paris', genre: 'Comédia/Romance', releaseDate: new Date('2020-01-01') },
+      { title: 'Round 6 (Squid Game)', genre: 'Suspense/Drama', releaseDate: new Date('2021-01-01') },
+      { title: 'You', genre: 'Suspense/Psicológico', releaseDate: new Date('2018-01-01') },
+      { title: 'Wednesday', genre: 'Mistério/Fantasia', releaseDate: new Date('2022-01-01') },
+      { title: 'Manifest', genre: 'Drama/Suspense', releaseDate: new Date('2018-01-01') },
+      { title: 'Cobra Kai', genre: 'Ação/Comédia', releaseDate: new Date('2018-01-01') },
+      { title: 'Brooklyn Nine-Nine', genre: 'Comédia/Policial', releaseDate: new Date('2013-01-01') },
+      { title: 'Modern Family', genre: 'Comédia', releaseDate: new Date('2009-01-01') },
+      { title: 'Glee', genre: 'Musical/Drama', releaseDate: new Date('2009-01-01') },
+      { title: 'The Vampire Diaries', genre: 'Fantasia/Drama', releaseDate: new Date('2009-01-01') },
+      { title: 'Gossip Girl (original)', genre: 'Drama/Romance', releaseDate: new Date('2007-01-01') },
+      { title: 'The 100', genre: 'Ficção científica/Drama', releaseDate: new Date('2014-01-01') }
+    ]
+  });
+  console.log('Filmes e séries cadastrados!');
+}
+
+main()
+  .catch(e => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
