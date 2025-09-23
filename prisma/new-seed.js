@@ -45,7 +45,7 @@ async function main() {
         genre: 'Ficção científica/Aventura', 
         releaseDate: new Date('1977-05-25'),
         synopsis: 'Luke Skywalker junta-se a um cavaleiro Jedi, um piloto arrogante, um Wookiee e dois dróides para salvar a galáxia da estação espacial do Império, enquanto tenta resgatar a princesa Leia das garras de Darth Vader.',
-        imageUrl: 'https://image.tmdb.org/t/p/w500/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg'
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg'
       },
       { 
         title: 'Clube da Luta', 
@@ -228,7 +228,7 @@ async function main() {
         genre: 'Drama/Histórico', 
         releaseDate: new Date('2016-11-04'),
         synopsis: 'Segue a vida política e pessoal da Rainha Elizabeth II desde sua coroação até os dias atuais.',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/pt/thumb/b/b6/The_Crown_-_Season_6_-_Official_Poster.png/345px-The_Crown_-_Season_6_-_Official_Poster.png'
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BNGI1ODkzZDQtZTYxYS00MTg1LWFlN2ItZTI1YTI2YjI0OWNlXkEyXkFqcGdeQXVyNjU2ODM5MjU@._V1_.jpg'
       },
       { 
         title: 'The Mandalorian', 
@@ -249,7 +249,7 @@ async function main() {
         genre: 'Drama', 
         releaseDate: new Date('2018-06-03'),
         synopsis: 'Os membros de uma família rica e disfuncional lutam pelo controle de seu império de mídia global após a saúde do patriarca começar a declinar.',
-        imageUrl: 'https://image.tmdb.org/t/p/w500/7HW47XbkNQ5fiwQFYGWdw9gs144.jpg'
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BODY5YjA3OGItMTFjZS00M2RhLWJlYjgtZDM2N2IzNzc0ZmQ2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg'
       },
       { 
         title: 'Dark', 
@@ -277,7 +277,7 @@ async function main() {
         genre: 'Fantasia/Ação', 
         releaseDate: new Date('2019-12-20'),
         synopsis: 'Geralt de Rivia, um caçador de monstros mutante, viaja em direção ao seu destino em um mundo turbulento onde as pessoas frequentemente se provam mais perversas que as bestas.',
-        imageUrl: 'https://image.tmdb.org/t/p/w500/7vjaCdMw15FEbXyLQTVa04URsPm.jpg'
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BN2FiOWU4YzYtMzZiOS00MzcyLTlkOGEtOTgwZmEwMzAxMzA3XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg'
       },
       { 
         title: 'Better Call Saul', 
@@ -312,14 +312,14 @@ async function main() {
         genre: 'Drama', 
         releaseDate: new Date('2022-06-23'),
         synopsis: 'Um jovem chef de um restaurante fino volta a Chicago para administrar a lanchonete da família após a morte trágica de seu irmão.',
-        imageUrl: 'https://image.tmdb.org/t/p/w500/sHFlbKS3WLqMnp9t2ghADIJFnuQ.jpg'
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BYzI0MzQyODUtNjdjYy00ZTliLWI0MTUtYTA0YjJmYTdiYWMxXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg'
       },
       { 
         title: 'House of the Dragon', 
         genre: 'Fantasia/Drama', 
         releaseDate: new Date('2022-08-21'),
         synopsis: 'Centrada na casa Targaryen, 300 anos antes dos eventos de Game of Thrones, esta série conta a história da guerra civil que dividiu a família.',
-        imageUrl: 'https://image.tmdb.org/t/p/w500/z2yahl2uefxDCl0nogcRBstwruJ.jpg'
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BZDBkZjRiNGMtZGU2My00ODdkLWI0MGYtNGU4MmJjN2MzOTkxXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg'
       },
       { 
         title: 'Peaky Blinders', 
@@ -333,7 +333,7 @@ async function main() {
         genre: 'Romance/Drama', 
         releaseDate: new Date('2020-12-25'),
         synopsis: 'A série acompanha os oito irmãos da família Bridgerton enquanto tentam encontrar o amor e a felicidade na alta sociedade londrina durante o período da Regência.',
-        imageUrl: 'https://image.tmdb.org/t/p/w500/luoKpgVwi1E5nQsi7W0UuKHu2Rq.jpg'
+        imageUrl: 'https://m.media-amazon.com/images/M/MV5BNjk5YTU0OTAtMTM1NC00Zjc1LWEzZjAtOWJkYzcxOGRhNWNhXkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_.jpg'
       }
     ]
   });

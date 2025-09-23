@@ -29,6 +29,7 @@ model Movie {
   title     String
   synopsis  String?  // Campo opcional de sinopse
   genre     String
+  imageUrl  String?  // Campo opcional para URL da imagem do filme
   releaseDate DateTime
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

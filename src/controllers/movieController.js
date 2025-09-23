@@ -18,14 +18,15 @@ export const getAllMovies = async (req, res) => {
     } else {
       movies = await movieModel.getAllMovies();
     }
-    // Formatar releaseDate para string ISO
+    // Formatar releaseDate para string ISO e garantir que imageUrl esteja presente
     const formatted = movies.map(movie => ({
       ...movie,
       releaseDate: movie.releaseDate instanceof Date
         ? movie.releaseDate.toISOString().slice(0, 10)
         : (typeof movie.releaseDate === 'string' && movie.releaseDate.includes('T'))
           ? movie.releaseDate.slice(0, 10)
-          : movie.releaseDate
+          : movie.releaseDate,
+      imageUrl: movie.imageUrl || null // Garantir que sempre retorne um valor para imageUrl
     }));
     res.json(formatted);
   } catch (error) {
@@ -37,14 +38,15 @@ export const getMovieById = async (req, res) => {
   try {
     const movie = await movieModel.getMovieById(Number(req.params.id));
     if (!movie) return res.status(404).json({ error: 'Filme não encontrado' });
-    // Formatar releaseDate para string ISO
+    // Formatar releaseDate para string ISO e garantir que imageUrl esteja presente
     const formatted = {
       ...movie,
       releaseDate: movie.releaseDate instanceof Date
         ? movie.releaseDate.toISOString().slice(0, 10)
         : (typeof movie.releaseDate === 'string' && movie.releaseDate.includes('T'))
           ? movie.releaseDate.slice(0, 10)
-          : movie.releaseDate
+          : movie.releaseDate,
+      imageUrl: movie.imageUrl || null // Garantir que sempre retorne um valor para imageUrl
     };
     res.json(formatted);
   } catch (error) {
