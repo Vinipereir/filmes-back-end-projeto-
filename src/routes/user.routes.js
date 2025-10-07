@@ -1,12 +1,17 @@
 import express from 'express';
-import { registerUser, getAllUsers, updateUser, deleteUser } from '../controllers/userController.js';
+import { createUser, loginUser, getAllUsers, deleteUser, verifyAdmin } from '../controllers/userController.js';
+import { authMiddleware } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
+// Rotas públicas
+router.post('/register', createUser);
+router.post('/login', loginUser);
 
-router.post('/register', registerUser);
-router.get('/', getAllUsers);
-router.put('/:id', updateUser);
-router.delete('/:id', deleteUser);
+// Rotas protegidas - requerem autenticação
+router.get('/', authMiddleware, getAllUsers);
+
+// Rotas administrativas - requerem admin
+router.delete('/:id', authMiddleware, verifyAdmin, deleteUser);
 
 export default router;

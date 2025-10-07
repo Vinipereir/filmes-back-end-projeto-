@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const authMiddleware = (req, res, next) => {
+export const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   // Verificar se o token existe
@@ -17,13 +17,24 @@ const authMiddleware = (req, res, next) => {
 
   const [schema, token] = parts;
 
+  // Verificar se o esquema é Bearer
+  if (!/^Bearer$/i.test(schema)) {
+    return res.status(401).json({ error: "Token mal formatado!" });
+  }
+
   // Verificar se o token é válido
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
       return res.status(401).json({ error: "Token inválido!" });
     }
 
-    req.userId = decoded.id;
+    // Adicionar informações do usuário ao request
+    req.user = {
+      id: decoded.userId,
+      email: decoded.email,
+      role: decoded.role
+    };
+    
     return next();
   });
 };
